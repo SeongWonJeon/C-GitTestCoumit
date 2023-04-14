@@ -70,7 +70,25 @@
                 return minority;
             }
 
-            // 4.
+            // 4. 사용자가 입력한 양의 정수의 각 자리수의 합을 구하는 Solution을 완성하라.
+            static int SimOfDigits(int num)
+            {
+                Console.WriteLine("숫자를 입력하세요 : ");
+                int number = int.Parse(Console.ReadLine());
+                Console.WriteLine("{0}을 전부 분리하여 더하겠습니다.", number);
+                int Addnumber = 0;
+
+                char[] A = number.ToString().ToCharArray();
+
+
+                foreach (char B in A)
+                {
+                    Addnumber += System.Convert.ToInt32(B.ToString());
+                }
+
+                Console.WriteLine(Addnumber);
+                return Addnumber;
+            }
 
 
 
