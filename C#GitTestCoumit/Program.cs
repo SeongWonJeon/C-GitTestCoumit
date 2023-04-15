@@ -2,6 +2,31 @@
 {
     internal class Program
     {
+        public static int[] FindCommonItem(int[] arr1, int[] arr2, int[] arr3)
+        {
+            int[] ALine = new int[Math.Min(Math.Min(arr1.Length, arr2.Length),arr3.Length)];
+            int idx = 0;
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                for (int j = 0; j < arr2.Length; j++)
+                {
+                    if (arr1[i] == arr2[j])
+                    {
+                        for (int k = 0; k < arr3.Length; k++)
+                        {
+                            if (arr3[k] == arr1[i])
+                            {
+                                ALine[idx++] = arr1[i];
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+            Array.Resize(ref ALine, idx);
+            return ALine;
+        }
         static void Main(string[] args)
         {
             // 1. pineapple si yammy
@@ -90,8 +115,16 @@
                 return Addnumber;
             }
 
+            // 5. k개의 정렬된 배열에서 공통항목을 찾는 Solution을 완성하라.단, 중복은 허용하지 않는다.
+            int[] array1 = { 1, 5, 5, 10 };
+            int[] array2 = { 3, 4, 5, 5, 10 };
+            int[] array3 = { 5, 5, 10, 20 };
+            int[] Ga = FindCommonItem(array1, array2, array3);
 
-
+            foreach (int i in Ga)
+            {
+                Console.WriteLine(i);
+            }
 
 
         }
