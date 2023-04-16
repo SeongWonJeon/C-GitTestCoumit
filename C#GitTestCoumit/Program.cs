@@ -126,7 +126,8 @@
                 Console.WriteLine(i);
             }
 
-
+            // 6. Up___Down_Game 만들기
+            Up___Down_Game.UpDownGame();
         }
     }
 }
